@@ -46,7 +46,7 @@ func BuildLocal() error {
 // BuildImages build images locally and not push
 func BuildImages() error {
 	exportLDFlags()
-	os.Setenv("KO_DOCKER_REPO", "ko.local/falco-talon")
+	os.Setenv("KO_DOCKER_REPO", "docker.io/igoritosousa22/falco-talon-labs")
 
 	return sh.RunV("ko", "build", "--bare", "--sbom=none", "--tags", getVersion(), "--tags", getCommit(), "--tags", "latest",
 		"github.com/Issif/falco-talon")
